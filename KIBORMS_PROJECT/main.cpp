@@ -5,14 +5,11 @@
  *      Author: louis
  */
 
-#include <stdio.h>
+#include "GameApp/App.h"
 
 int main(int argc, const char* argv[]){
 
-	printf("%%%02x","t");
+	new App();
+
 	return 0;
 }
-
-
-
-
