@@ -59,6 +59,7 @@ void App::update_screen(){
 void App::handle_event(){
 	while(SDL_PollEvent(&event)){
 		if( event.type == SDL_QUIT){
+
 			stop();
 
 		}
@@ -125,7 +126,7 @@ void App::load_conf(string conf){
 	BIT_PER_PIXEL = 32;
 	FULLSCREEN = false;
 
-	FRAME_RATE = 100;
+	FRAME_RATE = 60;
 	TITLE = "App";
 }
 

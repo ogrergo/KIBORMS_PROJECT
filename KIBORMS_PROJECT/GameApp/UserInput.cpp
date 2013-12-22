@@ -15,11 +15,18 @@ UserInput::UserInput() {
 		map.key[i] = false;
 		map.timers[i] = new Timer();
 	}
+	for(int i = 0; i < MAX_MOUSE; i++){
+		map.mouse_key[i] = false;
+		map.mouse_timer[i] = new Timer();
+	}
 }
 
 UserInput::~UserInput() {
 	for(int i = 0; i < SDLK_LAST; i++){
 		delete map.timers[i];
+	}
+	for(int i = 0; i < MAX_MOUSE; i++){
+		delete map.mouse_timer[i];
 	}
 }
 
@@ -39,10 +46,23 @@ void UserInput::handle_SDLevent(SDL_Event* event) {
 		}
 	}else{
 		if(event->type == SDL_MOUSEMOTION){
-			printf("mouse mouve");
+			map.x = event->motion.x;
+			map.y = event->motion.y;
+			//printf("mouse move: %d,%d\n",map.x,map.y);
 		}else{
 			if(event->type == SDL_MOUSEBUTTONDOWN || event->type == SDL_MOUSEBUTTONUP){
-				printf("mouse button");
+				if(event->button.state == SDL_PRESSED && event->button.button < MAX_MOUSE ){
+					map.mouse_key[event->button.button] = true;
+					map.mouse_timer[event->button.button]->start();
+					//printf("souris appuyé\n");
+				}else{
+					if( event->button.button < MAX_MOUSE){
+						map.mouse_key[event->button.button] = false;
+						//printf("souris relevé  time : %f\n",map.mouse_timer[event->button.button]->getElapsedTime());
+					}else{
+						printf("erreur touche souris non assigné !\n");
+					}
+				}
 			}
 		}
 	}
