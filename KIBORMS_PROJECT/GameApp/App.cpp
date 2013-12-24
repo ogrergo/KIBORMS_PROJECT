@@ -83,8 +83,13 @@ void App::update_timer(){
 
 	accum_time += elapsed_time;
 
-	if(accum_time > 1000000){
+	if(accum_time > 1000000 || accum_fps == FRAME_RATE){
 		accum_time -= 1000000;
+		if(accum_time < 0){
+			SDL_Delay(-accum_time);
+			accum_time = 0.0;
+		}
+
 		fps = accum_fps;
 		accum_fps = 0;
 		cout << "fps : " << fps << endl;
