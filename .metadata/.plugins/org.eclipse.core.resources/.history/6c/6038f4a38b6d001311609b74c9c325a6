@@ -1,0 +1,19 @@
+/*
+ * StaticBox.h
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef STATICBOX_H_
+#define STATICBOX_H_
+
+#include <Entity/Entity.h>
+
+class StaticBox: public Entity {
+public:
+	StaticBox();
+	virtual ~StaticBox();
+};
+
+#endif /* STATICBOX_H_ */

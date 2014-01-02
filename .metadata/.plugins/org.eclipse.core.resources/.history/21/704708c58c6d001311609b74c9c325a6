@@ -1,0 +1,20 @@
+/*
+ * StaticBox.cpp
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#include <Entity/StaticBox.h>
+
+b2BodyDef const StaticBox::myBodyDef = b2BodyDef(b2_dynamicBody,b2Vec2(0, 20));
+
+StaticBox::StaticBox() {
+
+
+}
+
+StaticBox::~StaticBox() {
+	// TODO Auto-generated destructor stub
+}
+

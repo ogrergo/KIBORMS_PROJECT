@@ -1,0 +1,18 @@
+/*
+ * UserInput.cpp
+ *
+ *  Created on: 22 déc. 2013
+ *      Author: louis
+ */
+
+#include "UserInput.h"
+
+UserInput::UserInput() {
+	//on initialise la liste des touches.
+	memset(&map,false,sizeof(map));
+}
+
+UserInput::~UserInput() {
+	// TODO Auto-generated destructor stub
+}
+

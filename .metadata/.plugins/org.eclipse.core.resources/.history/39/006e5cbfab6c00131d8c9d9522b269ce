@@ -1,0 +1,17 @@
+/*
+ * World.cpp
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#include "World.h"
+
+World::World() {
+	  b2World* myWorld = new b2World(gravity, doSleep);
+}
+
+World::~World() {
+	// TODO Auto-generated destructor stub
+}
+

@@ -1,0 +1,18 @@
+/*
+ * BoxEntity.cpp
+ *
+ *  Created on: 26 déc. 2013
+ *      Author: louis
+ */
+
+#include <Entity/BoxEntity.h>
+
+BoxEntity::BoxEntity() {
+	// TODO Auto-generated constructor stub
+
+}
+
+BoxEntity::~BoxEntity() {
+	// TODO Auto-generated destructor stub
+}
+

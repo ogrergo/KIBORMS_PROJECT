@@ -1,0 +1,33 @@
+/*
+ * World.cpp
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#include "World.h"
+#include <Box2D/Box2D.h>
+#include <iostream>
+
+
+World::World(int fps) {
+	FRAME_RATE = fps;
+	time_per_frame = 1.0/((float32) FRAME_RATE);
+	b2Vec2 gravity(0, -9.8);
+	physicBox = new b2World(gravity);
+}
+
+World::~World() {
+	  delete physicBox;
+}
+
+void World::update(){
+	printf("1");
+	physicBox->Step(time_per_frame, velocityIterations, positionIterations);
+
+}
+
+void World::render(){
+
+}
+

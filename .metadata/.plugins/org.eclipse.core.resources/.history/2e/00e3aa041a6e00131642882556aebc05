@@ -1,0 +1,24 @@
+/*
+ * StaticBox.cpp
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#include <Entity/StaticBox.h>
+
+
+StaticBox::StaticBox(World* world ) {
+	b2BodyDef myBodyDef;
+	myBodyDef.type = b2_dynamicBody; //this will be a dynamic body
+	myBodyDef.position.Set(-10, 20); //a little to the left
+
+	world->to_world(body);
+	body = m_world->CreateBody(&myBodyDef);
+
+}
+
+StaticBox::~StaticBox() {
+	// TODO Auto-generated destructor stub
+}
+

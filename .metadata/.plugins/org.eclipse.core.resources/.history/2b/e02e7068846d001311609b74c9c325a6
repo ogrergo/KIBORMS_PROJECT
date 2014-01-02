@@ -1,0 +1,27 @@
+/*
+ * World.cpp
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#include "World.h"
+
+World::World(int fps) {
+	FRAME_RATE = fps;
+	b2Vec2 gravity(0, -9.8);
+	physicBox = new b2World(gravity);
+}
+
+World::~World() {
+	  delete physicBox;
+}
+
+void World::update(){
+	physicBox->Step()
+}
+
+void World::render(){
+
+}
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;kiborms/Specifications&apos; to &apos;Docs&apos;" description="Rename resource &apos;Specifications&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Specifications" name="Docs" stamp="1388675216510" updateReferences="true"/>
+</session>

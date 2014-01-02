@@ -1,0 +1,71 @@
+/*
+ * World.cpp
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#include "World.h"
+#include <Box2D/Box2D.h>
+#include <iostream>
+#include <GL/gl.h>
+#include <GL/glu.h>
+
+
+World::World(int fps) {
+
+	FRAME_RATE = fps;
+	time_per_frame = 1.0/((float32) FRAME_RATE);
+	b2Vec2 gravity(0, -9.8);
+	physicBox = new b2World(gravity);
+
+	b2BodyDef myBodyDef;
+	myBodyDef.type = b2_dynamicBody; //this will be a dynamic body
+	myBodyDef.position.Set(0, 20); //a little to the left
+
+	b2Body* dynamicBody1 = physicBox->CreateBody(&myBodyDef);
+	b2CircleShape circleShape;
+	circleShape.m_p.Set(0, 0); //position, relative to body position
+	circleShape.m_radius = 1; //radius
+	b2FixtureDef myFixtureDef;
+	myFixtureDef.shape = circleShape;
+	dynamicBody1->CreateFixture(&myFixtureDef);
+
+
+
+	myBodyDef.type = b2_staticBody; //change body type
+	myBodyDef.position.Set(0,0); //middle, bottom
+
+	b2EdgeShape edgeShape;
+	edgeShape.Set( b2Vec2(-15,0), b2Vec2(15,0) );
+	myFixtureDef.shape = &edgeShape;
+
+	b2Body* staticBody = physicBox->CreateBody(&myBodyDef);
+	staticBody->CreateFixture(&myFixtureDef); //add a fixture to the body
+
+
+
+}
+
+World::~World() {
+	  delete physicBox;
+}
+
+void World::update(){
+	physicBox->Step(time_per_frame, velocityIterations, positionIterations);
+
+}
+
+void World::render(){
+	for (b2Body* body = physicBox->GetBodyList(); body; body = body->GetNext())
+	  {
+	      b2Vec2 p = body->GetPosition();
+
+	        glBegin(GL_TRIANGLES);
+	            glColor3ub(255,0,0);    glVertex2d(p.x,p.y);
+	            glColor3ub(0,255,0);    glVertex2d(0.0,0.0);
+	            glColor3ub(0,0,255);    glVertex2d(0.1,0.0);
+	        glEnd();
+	  }
+}
+

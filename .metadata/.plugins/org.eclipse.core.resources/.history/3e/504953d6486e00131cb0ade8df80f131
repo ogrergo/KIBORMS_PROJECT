@@ -1,0 +1,71 @@
+/*
+ * StaticBox.cpp
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#include <Entity/StaticBox.h>
+#include "GameApp.h"
+#include <GL/gl.h>
+#include <GL/glu.h>
+
+StaticBox::StaticBox(b2Vec2 position, float32 hauteur, float32 largeur) {
+	this->position = position;
+	this->hauteur = hauteur;
+	this->largeur = largeur;
+	init_shape();
+	init_graphic();
+}
+
+StaticBox::~StaticBox() {
+
+	//netoyage du graphisme
+	GameApp::freeDisplayList(dpl_listID);
+}
+
+void StaticBox::init_shape(){
+
+}
+
+void StaticBox::init_graphic(){
+	dpl_listID = GameApp::newDisplayList();
+	glBegin(GL_TRIANGLES);
+	glVertex2f(-largeur/2, -hauteur/2);
+	glVertex2f(-largeur/2, +hauteur/2);
+	glVertex2f(+largeur/2, +hauteur/2);
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glVertex2f(+largeur/2, +hauteur/2);
+	glVertex2f(+largeur/2, -hauteur/2);
+	glVertex2f(-largeur/2, -hauteur/2);
+	glEnd();
+	GameApp::endDisplayList();
+}
+
+void StaticBox::render(){
+	glPushMatrix();
+	b2Vec2 pos = body->GetPosition();
+	glTranslatef(pos.x, pos.y, 0.0);
+	GameApp::callDisplayList(dpl_listID);
+	glPopMatrix();
+}
+
+void StaticBox::initBody(b2Body* body){
+	this->body = body;
+	b2PolygonShape rectangle;
+	rectangle.SetAsBox(largeur, hauteur, position , 0 ); //a 2x2 rectangle
+	b2FixtureDef fixture;
+	fixture.shape = &rectangle;
+	body->CreateFixture(&fixture);
+
+}
+
+b2BodyDef StaticBox::getBodyDef(){
+	b2BodyDef body_def;
+	body_def.type = b2_dynamicBody; //this will be a dynamic body
+	body_def.position.Set(-10, 20); //a little to the left
+
+	return body_def;
+}

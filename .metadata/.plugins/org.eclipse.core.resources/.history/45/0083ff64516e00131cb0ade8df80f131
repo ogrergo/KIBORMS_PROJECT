@@ -1,0 +1,25 @@
+/*
+ * DynamicBox.cpp
+ *
+ *  Created on: 26 déc. 2013
+ *      Author: louis
+ */
+
+#include <Entity/DynamicBox.h>
+
+DynamicBox::DynamicBox(b2Vec2 pos, float32 largeur, float32 hauteur, float32 angle) : BoxEntity(pos,largeur, hauteur,angle) {
+	// TODO Auto-generated constructor stub
+
+}
+
+DynamicBox::~DynamicBox() {
+	// TODO Auto-generated destructor stub
+}
+
+b2BodyDef StaticBox::getBodyDef(){
+	b2BodyDef body_def;
+	body_def.type = b2_dynamicBody; //this will be a dynamic body
+	body_def.position.Set(position_init.x,position_init.y); //a little to the left
+
+	return body_def;
+}

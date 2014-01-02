@@ -1,0 +1,23 @@
+/*
+ * UserInput.cpp
+ *
+ *  Created on: 22 déc. 2013
+ *      Author: louis
+ */
+
+#include "UserInput.h"
+
+UserInput::UserInput() {
+	//on initialise la liste des touches.
+	for(int i = SDLK_FIRST; i < SDLK_LAST; i++){
+		map.key[i] = false;
+		map.timers[i] = new Timer();
+	}
+}
+
+UserInput::~UserInput() {
+	for(int i = SDLK_FIRST; i < SDLK_LAST; i++){
+		map.timers[i]~;
+	}
+}
+

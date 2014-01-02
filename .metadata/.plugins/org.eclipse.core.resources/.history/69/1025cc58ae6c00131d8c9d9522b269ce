@@ -1,0 +1,17 @@
+/*
+ * GameApp.h
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef GAMEAPP_H_
+#define GAMEAPP_H_
+
+class GameApp extends App{
+public:
+	GameApp();
+	virtual ~GameApp();
+};
+
+#endif /* GAMEAPP_H_ */

@@ -1,0 +1,17 @@
+/*
+ * Entity.h
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef ENTITY_H_
+#define ENTITY_H_
+
+class Entity {
+public:
+	Entity();
+	virtual ~Entity();
+};
+
+#endif /* ENTITY_H_ */

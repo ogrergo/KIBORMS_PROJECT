@@ -1,0 +1,19 @@
+/*
+ * BoxEntity.h
+ *
+ *  Created on: 26 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef BOXENTITY_H_
+#define BOXENTITY_H_
+
+#include <Entity/PhysicEntity.h>
+
+class BoxEntity: public PhysicEntity {
+public:
+	BoxEntity();
+	virtual ~BoxEntity();
+};
+
+#endif /* BOXENTITY_H_ */

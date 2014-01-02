@@ -1,0 +1,41 @@
+/*
+ * World.h
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef WORLD_H_
+#define WORLD_H_
+#include <Box2D/Box2D.h>
+#include <iostream>
+#include "Entity/StaticBox.h"
+
+using namespace std;
+
+class World {
+public:
+	World(int fps);
+	virtual ~World();
+
+	void update();
+	void render();
+
+	b2Body* to_world(b2BodyDef* const body_def);
+	void destroy_body(b2Body* const body);
+
+private:
+
+	int FRAME_RATE;
+	float32 time_per_frame;
+	int32 static const velocityIterations = 8;   //how strongly to correct velocity
+	int32 static const positionIterations = 3;   //how strongly to correct position
+
+	b2World* physicBox;
+
+	StaticBox* box;
+
+
+};
+
+#endif /* WORLD_H_ */

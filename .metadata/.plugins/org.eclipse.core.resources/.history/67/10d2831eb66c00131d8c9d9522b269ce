@@ -1,0 +1,27 @@
+/*
+ * GameApp.cpp
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#include <GameApp.h>
+
+GameApp::GameApp() : App(){
+	printf(",k,i");
+	// TODO Auto-generated constructor stub
+
+}
+
+GameApp::~GameApp() {
+	// TODO Auto-generated destructor stub
+}
+
+void GameApp::init(){
+	world = new World();
+	printf("cretatgk;");
+}
+
+void GameApp::render(){
+
+}

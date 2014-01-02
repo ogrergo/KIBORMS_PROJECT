@@ -1,0 +1,46 @@
+/*
+ * World.cpp
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#include "World.h"
+#include <Box2D/Box2D.h>
+#include <iostream>
+#include <GL/gl.h>
+#include <GL/glu.h>
+#include "Entity/StaticBox.h"
+
+
+World::World(int fps) {
+
+	FRAME_RATE = fps;
+	time_per_frame = 1.0/((float32) FRAME_RATE);
+	b2Vec2 gravity(0, -9.8);
+	physicBox = new b2World(gravity);
+	box = new StaticBox(b2Vec2(0.0,0.0),1.0,0.1,this);
+
+}
+
+World::~World() {
+	  delete physicBox;
+}
+
+void World::update(){
+	physicBox->Step(time_per_frame, velocityIterations, positionIterations);
+
+}
+
+void World::render(){
+
+}
+
+b2Body* World::to_world(b2BodyDef* const body_def){
+	return physicBox->CreateBody(body_def);
+}
+
+void World::destroy_body(b2Body* body){
+	physicBox->DestroyBody(body);
+}
+

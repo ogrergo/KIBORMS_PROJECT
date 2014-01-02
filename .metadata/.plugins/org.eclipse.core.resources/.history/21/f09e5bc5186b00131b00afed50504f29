@@ -1,0 +1,17 @@
+/*
+ * UserInput.h
+ *
+ *  Created on: 22 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef USERINPUT_H_
+#define USERINPUT_H_
+
+class UserInput {
+public:
+	UserInput();
+	virtual ~UserInput();
+};
+
+#endif /* USERINPUT_H_ */

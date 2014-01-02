@@ -1,0 +1,30 @@
+/*
+ * World.h
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef WORLD_H_
+#define WORLD_H_
+#include <Box2D/Box2D.h>
+
+class World {
+public:
+	World(int fps);
+	virtual ~World();
+
+	void update();
+	void render();
+
+
+
+private:
+	int FRAME_RATE;
+
+	b2World* physicBox;
+
+
+};
+
+#endif /* WORLD_H_ */

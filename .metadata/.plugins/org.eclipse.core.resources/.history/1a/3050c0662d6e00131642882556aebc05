@@ -1,0 +1,66 @@
+/*
+ * StaticBox.cpp
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#include <Entity/StaticBox.h>
+#include "World.h"
+#include "GameApp.h"
+#include <GL/gl.h>
+#include <GL/glu.h>
+
+StaticBox::StaticBox(b2Vec2 position, float32 hauteur, float32 largeur, World* world ) {
+	this->position = position;
+	this->hauteur = hauteur;
+	this->largeur = largeur;
+	this->world = world;
+	init_shape();
+	init_graphic();
+}
+
+StaticBox::~StaticBox() {
+	//
+
+	//netoyage du graphisme
+	GameApp::freeDisplayList(dpl_listID);
+}
+
+void StaticBox::init_shape(){
+	b2BodyDef body_def;
+	body_def.type = b2_staticBody; //this will be a dynamic body
+	body_def.position.Set(-10, 20); //a little to the left
+
+	body = world->to_world(&body_def);
+
+	b2PolygonShape rectangle;
+	rectangle.SetAsBox(largeur, hauteur, position , 0 ); //a 2x2 rectangle
+
+	b2FixtureDef fixture;
+	fixture.shape = rectangle;
+	body->CreateFixture(&fixture);
+}
+
+void StaticBox::init_graphic(){
+	dpl_listID = GameApp::newDisplayList();
+	glPushMatrix();
+	glTranslatef(position.x, position.y, 0.0);
+	glBegin(GL_TRIANGLES);
+	glVertex2f(-largeur/2, -hauteur/2);
+	glVertex2f(-largeur/2, +hauteur/2);
+	glVertex2f(+largeur/2, +hauteur/2);
+	glEnd();
+
+	glBegin(GL_TRIANGLES);
+	glVertex2f(+largeur/2, +hauteur/2);
+	glVertex2f(+largeur/2, -hauteur/2);
+	glVertex2f(-largeur/2, -hauteur/2);
+	glEnd();
+	glPopMatrix();
+	GameApp::endDisplayList();
+}
+
+void StaticBox::render(){
+	GameApp::callDisplayList(dpl_listID);
+}

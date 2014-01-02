@@ -1,0 +1,26 @@
+/*
+ * UserInput.h
+ *
+ *  Created on: 22 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef USERINPUT_H_
+#define USERINPUT_H_
+
+#include <SDL/SDL.h>
+
+class UserInput {
+public:
+	UserInput();
+	virtual ~UserInput();
+
+private:
+	typedef struct {
+		bool key[SDLK_LAST];
+	} KeyMap;
+
+	KeyMap map;
+};
+
+#endif /* USERINPUT_H_ */

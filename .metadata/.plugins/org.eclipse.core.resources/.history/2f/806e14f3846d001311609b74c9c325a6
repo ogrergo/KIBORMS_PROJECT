@@ -1,0 +1,34 @@
+/*
+ * World.h
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef WORLD_H_
+#define WORLD_H_
+#include <Box2D/Box2D.h>
+
+class World {
+public:
+	World(int fps);
+	virtual ~World();
+
+	void update();
+	void render();
+
+
+
+private:
+
+	int FRAME_RATE;
+	double time_per_frame;
+	int32 const velocityIterations = 8;   //how strongly to correct velocity
+	int32 const positionIterations = 3;   //how strongly to correct position
+
+	b2World* physicBox;
+
+
+};
+
+#endif /* WORLD_H_ */

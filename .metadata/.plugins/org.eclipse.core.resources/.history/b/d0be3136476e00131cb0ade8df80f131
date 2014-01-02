@@ -1,0 +1,38 @@
+/*
+ * StaticBox.h
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef STATICBOX_H_
+#define STATICBOX_H_
+
+#include <Entity/Entity.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+
+class StaticBox: public Entity {
+public:
+	StaticBox(b2Vec2 pos, float32 hauteur, float32 largeur);
+	virtual ~StaticBox();
+
+	virtual void render();
+
+	virtual b2BodyDef getBodyDef();
+protected:
+	/*
+	 * Définition de la forme d'une box statique:
+	 */
+
+
+	b2Vec2 position;
+	float32 hauteur, largeur;
+private:
+	uint dpl_listID ;
+	virtual void init_shape();
+	virtual void init_graphic();
+
+};
+
+#endif /* STATICBOX_H_ */

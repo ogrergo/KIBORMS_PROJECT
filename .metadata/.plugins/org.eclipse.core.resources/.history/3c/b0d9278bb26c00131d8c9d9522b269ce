@@ -1,0 +1,21 @@
+/*
+ * GameApp.cpp
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#include <GameApp.h>
+
+GameApp::GameApp() {
+	// TODO Auto-generated constructor stub
+
+}
+
+GameApp::~GameApp() {
+	// TODO Auto-generated destructor stub
+}
+
+void GameApp:init(){
+
+}

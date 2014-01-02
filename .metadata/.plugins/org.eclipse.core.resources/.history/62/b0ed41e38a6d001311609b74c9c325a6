@@ -1,0 +1,23 @@
+/*
+ * Entity.h
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef ENTITY_H_
+#define ENTITY_H_
+
+class Entity {
+public:
+	Entity();
+	virtual ~Entity();
+
+	virtual void render();
+	virtual void update();
+
+protected:
+	b2Body* body;//la position du solide
+};
+
+#endif /* ENTITY_H_ */

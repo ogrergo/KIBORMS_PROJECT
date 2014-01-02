@@ -1,0 +1,18 @@
+/*
+ * DynamicBox.cpp
+ *
+ *  Created on: 26 déc. 2013
+ *      Author: louis
+ */
+
+#include <Entity/DynamicBox.h>
+
+DynamicBox::DynamicBox() {
+	// TODO Auto-generated constructor stub
+
+}
+
+DynamicBox::~DynamicBox() {
+	// TODO Auto-generated destructor stub
+}
+

@@ -5,11 +5,11 @@
  *      Author: louis
  */
 
-#include "GameApp/App.h"
+#include "GameApp.h"
 
 int main(int argc, const char* argv[]){
-
-	new App();
+	GameApp* pp = (new GameApp());
+	pp->run();
 
 	return 0;
 }

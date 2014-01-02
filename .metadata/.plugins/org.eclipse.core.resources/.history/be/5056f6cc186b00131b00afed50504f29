@@ -1,0 +1,17 @@
+/*
+ * UserInput.cpp
+ *
+ *  Created on: 22 déc. 2013
+ *      Author: louis
+ */
+
+#include "UserInput.h"
+
+UserInput::UserInput() {
+	memset(&map,,sizeof(map));
+}
+
+UserInput::~UserInput() {
+	// TODO Auto-generated destructor stub
+}
+

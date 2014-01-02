@@ -1,0 +1,18 @@
+/*
+ * StaticBox.cpp
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#include <Entity/StaticBox.h>
+
+StaticBox::StaticBox() {
+
+
+}
+
+StaticBox::~StaticBox() {
+	// TODO Auto-generated destructor stub
+}
+

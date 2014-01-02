@@ -1,0 +1,18 @@
+/*
+ * World.cpp
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#include "World.h"
+#include <Box2D/Box2D.h>
+
+World::World() {
+	  b2World* myWorld = new b2World(9.14);
+}
+
+World::~World() {
+	// TODO Auto-generated destructor stub
+}
+

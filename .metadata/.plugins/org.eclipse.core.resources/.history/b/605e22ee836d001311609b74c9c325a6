@@ -1,0 +1,19 @@
+/*
+ * World.cpp
+ *
+ *  Created on: 24 déc. 2013
+ *      Author: louis
+ */
+
+#include "World.h"
+#include <Box2D/Box2D.h>
+
+World::World() {
+	b2Vec2 gravity(0, -9.8);
+	b2World* myWorld = new b2World(gravity);
+}
+
+World::~World() {
+	  delete myWorld;
+}
+

@@ -1,0 +1,28 @@
+/*
+ * StaticBox.h
+ *
+ *  Created on: 25 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef STATICBOX_H_
+#define STATICBOX_H_
+
+#include <Entity/Entity.h>
+
+class StaticBox: public Entity {
+public:
+	StaticBox();
+	virtual ~StaticBox();
+
+	virtual void render();
+protected:
+	/*
+	 * Définition de la forme d'une box statique:
+	 */
+	b2BodyDef myBodyDef(b2_dynamicBody,b2Vec2(0, 20));
+	//myBodyDef.type = b2_dynamicBody; //this will be a dynamic body
+	//myBodyDef.position.Set(0, 20); //a little to the left
+};
+
+#endif /* STATICBOX_H_ */

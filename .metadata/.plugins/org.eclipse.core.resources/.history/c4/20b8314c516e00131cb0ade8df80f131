@@ -1,0 +1,19 @@
+/*
+ * DynamicBox.h
+ *
+ *  Created on: 26 déc. 2013
+ *      Author: louis
+ */
+
+#ifndef DYNAMICBOX_H_
+#define DYNAMICBOX_H_
+
+#include <Entity/BoxEntity.h>
+
+class DynamicBox: public BoxEntity {
+public:
+	DynamicBox();
+	virtual ~DynamicBox();
+};
+
+#endif /* DYNAMICBOX_H_ */
