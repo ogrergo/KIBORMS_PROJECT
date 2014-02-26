@@ -1,0 +1,38 @@
+00:41:39: Creating resource group General
+00:41:39: Creating resource group Internal
+00:41:39: Creating resource group Autodetect
+00:41:39: SceneManagerFactory for type 'DefaultSceneManager' registered.
+00:41:39: Registering ResourceManager for type Material
+00:41:39: Registering ResourceManager for type Mesh
+00:41:39: Registering ResourceManager for type Skeleton
+00:41:39: MovableObjectFactory for type 'ParticleSystem' registered.
+00:41:39: OverlayElementFactory for type Panel registered.
+00:41:39: OverlayElementFactory for type BorderPanel registered.
+00:41:39: OverlayElementFactory for type TextArea registered.
+00:41:39: Registering ResourceManager for type Font
+00:41:39: ArchiveFactory for archive type FileSystem registered.
+00:41:39: ArchiveFactory for archive type Zip registered.
+00:41:39: ArchiveFactory for archive type EmbeddedZip registered.
+00:41:39: DDS codec registering
+00:41:39: FreeImage version: 3.15.1
+00:41:39: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
+00:41:39: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,cut,xbm,xpm,gif,hdr,g3,sgi,exr,j2k,j2c,jp2,pfm,pct,pict,pic,3fr,arw,bay,bmq,cap,cine,cr2,crw,cs1,dc2,dcr,drf,dsc,dng,erf,fff,ia,iiq,k25,kc2,kdc,mdc,mef,mos,mrw,nef,nrw,orf,pef,ptx,pxn,qtk,raf,raw,rdc,rw2,rwl,rwz,sr2,srf,sti
+00:41:39: Registering ResourceManager for type HighLevelGpuProgram
+00:41:39: Registering ResourceManager for type Compositor
+00:41:39: MovableObjectFactory for type 'Entity' registered.
+00:41:39: MovableObjectFactory for type 'Light' registered.
+00:41:39: MovableObjectFactory for type 'BillboardSet' registered.
+00:41:39: MovableObjectFactory for type 'ManualObject' registered.
+00:41:39: MovableObjectFactory for type 'BillboardChain' registered.
+00:41:39: MovableObjectFactory for type 'RibbonTrail' registered.
+00:41:39: *-*-* OGRE Initialising
+00:41:39: *-*-* Version 1.8.1 (Byatis)
+00:41:39: Loading library RenderSystem_GL
+00:41:39: OGRE EXCEPTION(7:InternalErrorException): Could not load dynamic library RenderSystem_GL.  System Error: RenderSystem_GL.so: cannot open shared object file: No such file or directory in DynLib::load at /home/louis/code/ogre/ogre_src_v1-8-1/OgreMain/src/OgreDynLib.cpp (line 93)
+00:41:39: *-*-* OGRE Shutdown
+00:41:39: Unregistering ResourceManager for type Compositor
+00:41:39: Unregistering ResourceManager for type Font
+00:41:39: Unregistering ResourceManager for type Skeleton
+00:41:39: Unregistering ResourceManager for type Mesh
+00:41:39: Unregistering ResourceManager for type HighLevelGpuProgram
+00:41:39: Unregistering ResourceManager for type Material

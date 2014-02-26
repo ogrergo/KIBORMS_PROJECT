@@ -1,0 +1,219 @@
+/*
+ * App.cpp
+ *
+ *  Created on: 2 nov. 2013
+ *      Author: louis
+ */
+
+#include "App.h"
+#include <GL/gl.h>
+#include <GL/glu.h>
+
+
+uint App::id_liste = 1;
+
+App::App() {
+	init_App("");
+
+}
+
+App::~App() {
+	printf("detruit");
+	clean_App();
+}
+
+void err(string str){
+	cerr << "**** " << str << endl;
+}
+void msg(string str){
+	cout << "** " << str << endl;
+}
+
+void App::run(){
+	running = true;
+	init_timer();
+	key_manager = new UserInput();
+
+	while(running){
+		update();
+		update_screen();
+		handle_event();
+		update_timer();
+	}
+}
+
+void App::stop(){
+	running = false;
+}
+
+void App::init(){
+
+}
+void App::update(){
+
+}
+void App::clean(){
+
+}
+
+void App::render(){
+
+}
+
+void App::key_pressed(){
+
+}
+
+void App::key_released(){
+
+}
+
+void App::update_screen(){
+    glClear(GL_COLOR_BUFFER_BIT);
+	render();
+    glFlush();
+    SDL_GL_SwapBuffers();
+}
+
+void App::handle_event(){
+	while(SDL_PollEvent(&event)){
+		if( event.type == SDL_QUIT){
+
+			stop();
+
+		}
+		key_manager->handle_SDLevent(&event);
+	}
+}
+
+void App::update_timer(){
+
+	double elapsed_time = timer->getElapsedTimeInMicroSec() + accum_time;
+
+	accum_fps++;
+
+	if(elapsed_time  < time_per_frame*accum_fps){
+		SDL_Delay((time_per_frame*accum_fps - elapsed_time)*0.001);
+	}
+
+	timer->stop();
+
+	elapsed_time = timer->getElapsedTimeInMicroSec();
+
+	accum_time += elapsed_time;
+
+	if(accum_time > 1000000 || accum_fps == FRAME_RATE){
+		accum_time -= 1000000;
+		if(accum_time < 0){
+			SDL_Delay(-accum_time);
+			//printf("skip :%f\\%f",-accum_time,time_per_frame);
+			accum_time = 0.0;
+
+		}
+
+		fps = accum_fps;
+		accum_fps = 0;
+		cout << "fps : " << fps << endl;
+	}
+
+	(timer)->start();
+}
+
+void App::init_timer(){
+	timer = new Timer();
+
+	//on calcul le temps reservé à chaque frame en microseconde
+	time_per_frame = 1000000.0 / (double)FRAME_RATE;
+
+	accum_time = 0;
+	accum_fps = 0;
+
+	timer->start();
+}
+
+void App::init_App(string conf){
+	load_conf(conf);
+
+
+	if(init_SDL() < 0){
+
+	}
+
+	init_OPENGL();
+}
+
+void App::load_conf(string conf){
+	//valeur par defaut
+	SCREEN_WIDTH = 800;
+	SCREEN_HEIGHT = 700;
+
+	BIT_PER_PIXEL = 32;
+	FULLSCREEN = false;
+
+	FRAME_RATE = 60;
+	TITLE = "App";
+}
+
+int App::init_SDL(){
+
+	if(SDL_Init(SDL_INIT_EVERYTHING) < 0){
+		err("App SDL : Impossible d'initialiser SDL");
+		return -1;
+	}
+	if(SDL_SetVideoMode(SCREEN_WIDTH,SCREEN_HEIGHT,BIT_PER_PIXEL,SDL_OPENGL | (FULLSCREEN ? SDL_FULLSCREEN : 0)) == NULL){
+		err("App SDL : Impossible de choisir un video mode");
+		return -1;
+	}
+	SDL_WM_SetCaption( TITLE.c_str() , NULL );
+
+	return 0;
+}
+
+int App::init_OPENGL(){
+	//glewInit();
+
+	/*if (glewIsSupported("GL_VERSION_2_0"))
+		msg("App OpenGL : OpenGL 2.0 est supporté\n");
+	else {
+		err("OpenGL 2.0 not supported\n");
+		return -1;
+	}*/
+	return 0;
+
+
+}
+
+void App::clean_App(){
+	clean();
+
+	clean_SDL();
+
+	delete timer;
+	timer = NULL;
+
+	delete key_manager;
+	key_manager = NULL;
+
+	msg("App : Application fermée proprement.");
+}
+
+void App::clean_SDL(){
+	SDL_Quit();
+}
+
+GLuint App::newDisplayList(){
+	glNewList(id_liste,GL_COMPILE);
+	id_liste++;
+	return id_liste - 1;
+}
+
+void App::endDisplayList(){
+	glEndList();
+}
+void App::freeDisplayList(uint displaylistID){
+	glDeleteLists(displaylistID,1);
+}
+void App::callDisplayList(uint displaylistID){
+	glCallList(displaylistID);
+}
+
