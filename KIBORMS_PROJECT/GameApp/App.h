@@ -22,11 +22,20 @@ class App {
 public:
 	App();
 	virtual ~App();
+
+	/*
+	 * Demarre l'App : charge le fichier de configu, lance les modules avec les bon paramètre et creer un objet interface, lance la boucle peridique en appellant la fonction tick() d'elle
+	 */
 	void run();
 
+	/*
+	 * Arrete l'App proprement
+	 */
+	void stop();
 
 	/*
 	 * Permet de creer une nouvelle display liste, et renvoie le handler.
+	 * A bouger dans une classe static
 	 */
 	GLuint static newDisplayList();
 	void static endDisplayList();
@@ -34,9 +43,14 @@ public:
 	void static callDisplayList(uint displaylistID);
 protected:
 
+	/*
+	 * A true lorsque la boucle fonctionne
+	 */
 	bool running;
 
-	//SDL
+	/*
+	 * Event à transferer
+	 */
 	SDL_Event event;
 
 	int fps;
@@ -49,6 +63,9 @@ protected:
 	UserInput* key_manager;
 
 	//variable utilisateur
+	/*
+	 * A charger par un fichier de conf
+	 */
 	int SCREEN_WIDTH;
 	int SCREEN_HEIGHT;
 	int BIT_PER_PIXEL;
@@ -56,7 +73,6 @@ protected:
 	int FRAME_RATE;
 	string TITLE;
 
-	void stop();
 
 	//fonctions à réécrire pour le programme
 	virtual void init();

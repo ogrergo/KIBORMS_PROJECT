@@ -152,6 +152,7 @@
 		</Unit>
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/GameWindow.cpp" />
+		<Unit filename="src/GameWorld.cpp" />
 		<Unit filename="src/Interface.cpp">
 			<Option compile="0" />
 			<Option link="0" />
@@ -164,6 +165,8 @@
 			<Option compile="0" />
 			<Option link="0" />
 		</Unit>
+		<Unit filename="src/entity/GameEntity.cpp" />
+		<Unit filename="src/entity/GameEntity.h" />
 		<Unit filename="src/test_config.cpp">
 			<Option link="0" />
 		</Unit>

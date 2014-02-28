@@ -1,15 +1,133 @@
-18:29:30 **** Incremental Build of configuration Debug for project KIBORMS_PROJECT ****
+15:05:19 **** Incremental Build of configuration Debug for project testogre ****
 make all 
-Building file: ../GameApp/World.cpp
-Invoking: Cross G++ Compiler
-g++ -I"/home/louis/code/Kiborms/KIBORMS_PROJECT/GameApp" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"GameApp/World.d" -MT"GameApp/World.d" -o "GameApp/World.o" "../GameApp/World.cpp"
-Finished building: ../GameApp/World.cpp
- 
-Building target: KIBORMS_PROJECT
+Building target: testogre
 Invoking: Cross G++ Linker
-g++  -o "KIBORMS_PROJECT"  ./GameApp/Timer/Timer.o  ./GameApp/Entity/BoxEntity.o ./GameApp/Entity/DynamicBox.o ./GameApp/Entity/Entity.o ./GameApp/Entity/PhysicEntity.o ./GameApp/Entity/StaticBox.o  ./GameApp/Box2D/Rope/b2Rope.o  ./GameApp/Box2D/Dynamics/Joints/b2DistanceJoint.o ./GameApp/Box2D/Dynamics/Joints/b2FrictionJoint.o ./GameApp/Box2D/Dynamics/Joints/b2GearJoint.o ./GameApp/Box2D/Dynamics/Joints/b2Joint.o ./GameApp/Box2D/Dynamics/Joints/b2MotorJoint.o ./GameApp/Box2D/Dynamics/Joints/b2MouseJoint.o ./GameApp/Box2D/Dynamics/Joints/b2PrismaticJoint.o ./GameApp/Box2D/Dynamics/Joints/b2PulleyJoint.o ./GameApp/Box2D/Dynamics/Joints/b2RevoluteJoint.o ./GameApp/Box2D/Dynamics/Joints/b2RopeJoint.o ./GameApp/Box2D/Dynamics/Joints/b2WeldJoint.o ./GameApp/Box2D/Dynamics/Joints/b2WheelJoint.o  ./GameApp/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.o ./GameApp/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.o ./GameApp/Box2D/Dynamics/Contacts/b2CircleContact.o ./GameApp/Box2D/Dynamics/Contacts/b2Contact.o ./GameApp/Box2D/Dynamics/Contacts/b2ContactSolver.o ./GameApp/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.o ./GameApp/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.o ./GameApp/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.o ./GameApp/Box2D/Dynamics/Contacts/b2PolygonContact.o  ./GameApp/Box2D/Dynamics/b2Body.o ./GameApp/Box2D/Dynamics/b2ContactManager.o ./GameApp/Box2D/Dynamics/b2Fixture.o ./GameApp/Box2D/Dynamics/b2Island.o ./GameApp/Box2D/Dynamics/b2World.o ./GameApp/Box2D/Dynamics/b2WorldCallbacks.o  ./GameApp/Box2D/Common/b2BlockAllocator.o ./GameApp/Box2D/Common/b2Draw.o ./GameApp/Box2D/Common/b2Math.o ./GameApp/Box2D/Common/b2Settings.o ./GameApp/Box2D/Common/b2StackAllocator.o ./GameApp/Box2D/Common/b2Timer.o  ./GameApp/Box2D/Collision/Shapes/b2ChainShape.o ./GameApp/Box2D/Collision/Shapes/b2CircleShape.o ./GameApp/Box2D/Collision/Shapes/b2EdgeShape.o ./GameApp/Box2D/Collision/Shapes/b2PolygonShape.o  ./GameApp/Box2D/Collision/b2BroadPhase.o ./GameApp/Box2D/Collision/b2CollideCircle.o ./GameApp/Box2D/Collision/b2CollideEdge.o ./GameApp/Box2D/Collision/b2CollidePolygon.o ./GameApp/Box2D/Collision/b2Collision.o ./GameApp/Box2D/Collision/b2Distance.o ./GameApp/Box2D/Collision/b2DynamicTree.o ./GameApp/Box2D/Collision/b2TimeOfImpact.o  ./GameApp/App.o ./GameApp/GameApp.o ./GameApp/UserInput.o ./GameApp/World.o  ./main.o   -lSDL -lGL
-Finished building target: KIBORMS_PROJECT
- 
-18:29:38 **** Incremental Build of configuration Debug for project KIBORMS_PROJECT ****
-make all 
-make: Nothing to be done for `all'.
+g++ -L/usr/local/lib/OGRE -L/usr/local/lib -o "testogre"  ./main.o   
+./main.o: In function `Ogre::NedPoolingPolicy::allocateBytes(unsigned long, char const*, int, char const*)':
+/usr/local/include/OGRE/OgreMemoryNedPooling.h:73: undefined reference to `Ogre::NedPoolingImpl::allocBytes(unsigned long, char const*, int, char const*)'
+./main.o: In function `Ogre::NedPoolingPolicy::deallocateBytes(void*)':
+/usr/local/include/OGRE/OgreMemoryNedPooling.h:77: undefined reference to `Ogre::NedPoolingImpl::deallocBytes(void*)'
+./main.o: In function `Ogre::Math::DegreesToRadians(float)':
+/usr/local/include/OGRE/OgreMath.h:475: undefined reference to `Ogre::Math::fDeg2Rad'
+./main.o: In function `ExampleFrameListener::updateStats()':
+/usr/local/include/OGRE/ExampleFrameListener.h:74: undefined reference to `Ogre::OverlayManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:74: undefined reference to `Ogre::OverlayManager::getOverlayElement(std::string const&, bool)'
+/usr/local/include/OGRE/ExampleFrameListener.h:75: undefined reference to `Ogre::OverlayManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:75: undefined reference to `Ogre::OverlayManager::getOverlayElement(std::string const&, bool)'
+/usr/local/include/OGRE/ExampleFrameListener.h:76: undefined reference to `Ogre::OverlayManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:76: undefined reference to `Ogre::OverlayManager::getOverlayElement(std::string const&, bool)'
+/usr/local/include/OGRE/ExampleFrameListener.h:77: undefined reference to `Ogre::OverlayManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:77: undefined reference to `Ogre::OverlayManager::getOverlayElement(std::string const&, bool)'
+/usr/local/include/OGRE/ExampleFrameListener.h:80: undefined reference to `Ogre::StringConverter::toString(float, unsigned short, unsigned short, char, std::_Ios_Fmtflags)'
+/usr/local/include/OGRE/ExampleFrameListener.h:80: undefined reference to `Ogre::UTFString::UTFString(std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:80: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:81: undefined reference to `Ogre::StringConverter::toString(float, unsigned short, unsigned short, char, std::_Ios_Fmtflags)'
+/usr/local/include/OGRE/ExampleFrameListener.h:81: undefined reference to `Ogre::UTFString::UTFString(std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:81: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:83: undefined reference to `Ogre::StringConverter::toString(unsigned long, unsigned short, char, std::_Ios_Fmtflags)'
+/usr/local/include/OGRE/ExampleFrameListener.h:83: undefined reference to `Ogre::StringConverter::toString(float, unsigned short, unsigned short, char, std::_Ios_Fmtflags)'
+/usr/local/include/OGRE/ExampleFrameListener.h:83: undefined reference to `Ogre::UTFString::UTFString(std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:83: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:85: undefined reference to `Ogre::StringConverter::toString(unsigned long, unsigned short, char, std::_Ios_Fmtflags)'
+/usr/local/include/OGRE/ExampleFrameListener.h:85: undefined reference to `Ogre::StringConverter::toString(float, unsigned short, unsigned short, char, std::_Ios_Fmtflags)'
+/usr/local/include/OGRE/ExampleFrameListener.h:85: undefined reference to `Ogre::UTFString::UTFString(std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:85: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:87: undefined reference to `Ogre::OverlayManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:87: undefined reference to `Ogre::OverlayManager::getOverlayElement(std::string const&, bool)'
+/usr/local/include/OGRE/ExampleFrameListener.h:88: undefined reference to `Ogre::StringConverter::toString(unsigned long, unsigned short, char, std::_Ios_Fmtflags)'
+/usr/local/include/OGRE/ExampleFrameListener.h:88: undefined reference to `Ogre::UTFString::UTFString(std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:88: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:90: undefined reference to `Ogre::OverlayManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:90: undefined reference to `Ogre::OverlayManager::getOverlayElement(std::string const&, bool)'
+/usr/local/include/OGRE/ExampleFrameListener.h:91: undefined reference to `Ogre::StringConverter::toString(unsigned long, unsigned short, char, std::_Ios_Fmtflags)'
+/usr/local/include/OGRE/ExampleFrameListener.h:91: undefined reference to `Ogre::UTFString::UTFString(std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:91: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:93: undefined reference to `Ogre::OverlayManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:93: undefined reference to `Ogre::OverlayManager::getOverlayElement(std::string const&, bool)'
+/usr/local/include/OGRE/ExampleFrameListener.h:94: undefined reference to `Ogre::UTFString::UTFString(std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:94: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:80: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:81: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:83: undefined reference to `Ogre::UTFString::~UTFString()'
+/usr/local/include/OGRE/ExampleFrameListener.h:85: undefined reference to `Ogre::UTFString::~UTFString()'
+./main.o:/usr/local/include/OGRE/ExampleFrameListener.h:88: more undefined references to `Ogre::UTFString::~UTFString()' follow
+./main.o:(.gcc_except_table+0x588): undefined reference to `typeinfo for Ogre::Exception'
+./main.o: In function `ExampleFrameListener::ExampleFrameListener(Ogre::RenderWindow*, Ogre::Camera*, bool, bool, bool)':
+/usr/local/include/OGRE/ExampleFrameListener.h:106: undefined reference to `Ogre::Vector3::ZERO'
+/usr/local/include/OGRE/ExampleFrameListener.h:106: undefined reference to `Ogre::Vector3::ZERO'
+/usr/local/include/OGRE/ExampleFrameListener.h:109: undefined reference to `Ogre::OverlayManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:109: undefined reference to `Ogre::OverlayManager::getByName(std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:111: undefined reference to `Ogre::LogManager::getSingletonPtr()'
+/usr/local/include/OGRE/ExampleFrameListener.h:111: undefined reference to `Ogre::LogManager::logMessage(std::string const&, Ogre::LogMessageLevel, bool)'
+/usr/local/include/OGRE/ExampleFrameListener.h:120: undefined reference to `OIS::InputManager::createInputSystem(std::multimap<std::string, std::string, std::less<std::string>, std::allocator<std::pair<std::string const, std::string> > >&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:123: undefined reference to `OIS::InputManager::createInputObject(OIS::Type, bool, std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:124: undefined reference to `OIS::InputManager::createInputObject(OIS::Type, bool, std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:126: undefined reference to `OIS::InputManager::createInputObject(OIS::Type, bool, std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:138: undefined reference to `Ogre::WindowEventUtilities::addWindowEventListener(Ogre::RenderWindow*, Ogre::WindowEventListener*)'
+./main.o: In function `ExampleFrameListener::windowClosed(Ogre::RenderWindow*)':
+/usr/local/include/OGRE/ExampleFrameListener.h:216: undefined reference to `OIS::InputManager::destroyInputObject(OIS::Object*)'
+/usr/local/include/OGRE/ExampleFrameListener.h:217: undefined reference to `OIS::InputManager::destroyInputObject(OIS::Object*)'
+/usr/local/include/OGRE/ExampleFrameListener.h:218: undefined reference to `OIS::InputManager::destroyInputObject(OIS::Object*)'
+/usr/local/include/OGRE/ExampleFrameListener.h:220: undefined reference to `OIS::InputManager::destroyInputSystem(OIS::InputManager*)'
+./main.o: In function `ExampleFrameListener::~ExampleFrameListener()':
+/usr/local/include/OGRE/ExampleFrameListener.h:229: undefined reference to `Ogre::WindowEventUtilities::removeWindowEventListener(Ogre::RenderWindow*, Ogre::WindowEventListener*)'
+./main.o: In function `ExampleFrameListener::processUnbufferedKeyInput(Ogre::FrameEvent const&)':
+/usr/local/include/OGRE/ExampleFrameListener.h:258: undefined reference to `Ogre::Camera::yaw(Ogre::Radian const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:261: undefined reference to `Ogre::Camera::yaw(Ogre::Radian const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:291: undefined reference to `Ogre::MaterialManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:292: undefined reference to `Ogre::MaterialManager::getSingleton()'
+/usr/local/include/OGRE/ExampleFrameListener.h:292: undefined reference to `Ogre::MaterialManager::setDefaultAnisotropy(unsigned int)'
+/usr/local/include/OGRE/ExampleFrameListener.h:302: undefined reference to `Ogre::RenderTarget::writeContentsToFile(std::string const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:311: undefined reference to `Ogre::Camera::setPolygonMode(Ogre::PolygonMode)'
+/usr/local/include/OGRE/ExampleFrameListener.h:312: undefined reference to `Ogre::Camera::setPolygonMode(Ogre::PolygonMode)'
+/usr/local/include/OGRE/ExampleFrameListener.h:313: undefined reference to `Ogre::Camera::setPolygonMode(Ogre::PolygonMode)'
+/usr/local/include/OGRE/ExampleFrameListener.h:330: undefined reference to `Ogre::Camera::getDerivedOrientation() const'
+/usr/local/include/OGRE/ExampleFrameListener.h:330: undefined reference to `Ogre::StringConverter::toString(Ogre::Quaternion const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:329: undefined reference to `Ogre::Camera::getDerivedPosition() const'
+/usr/local/include/OGRE/ExampleFrameListener.h:330: undefined reference to `Ogre::StringConverter::toString(Ogre::Vector3 const&)'
+./main.o: In function `ExampleFrameListener::moveCamera()':
+/usr/local/include/OGRE/ExampleFrameListener.h:385: undefined reference to `Ogre::Camera::yaw(Ogre::Radian const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:386: undefined reference to `Ogre::Camera::pitch(Ogre::Radian const&)'
+/usr/local/include/OGRE/ExampleFrameListener.h:387: undefined reference to `Ogre::Camera::moveRelative(Ogre::Vector3 const&)'
+./main.o: In function `ExampleFrameListener::showDebugOverlay(bool)':
+/usr/local/include/OGRE/ExampleFrameListener.h:395: undefined reference to `Ogre::Overlay::show()'
+/usr/local/include/OGRE/ExampleFrameListener.h:397: undefined reference to `Ogre::Overlay::hide()'
+./main.o: In function `ExampleFrameListener::frameRenderingQueued(Ogre::FrameEvent const&)':
+/usr/local/include/OGRE/ExampleFrameListener.h:432: undefined reference to `Ogre::Vector3::ZERO'
+/usr/local/include/OGRE/ExampleFrameListener.h:452: undefined reference to `Ogre::Vector3::ZERO'
+./main.o: In function `ExampleApplication::~ExampleApplication()':
+/usr/local/include/OGRE/ExampleApplication.h:160: undefined reference to `Ogre::Root::~Root()'
+./main.o: In function `ExampleApplication::go()':
+/usr/local/include/OGRE/ExampleApplication.h:173: undefined reference to `Ogre::Root::startRendering()'
+./main.o: In function `ExampleApplication::setup()':
+/usr/local/include/OGRE/ExampleApplication.h:218: undefined reference to `Ogre::Root::Root(std::string const&, std::string const&, std::string const&)'
+/usr/local/include/OGRE/ExampleApplication.h:219: undefined reference to `Ogre::OverlaySystem::OverlaySystem()'
+/usr/local/include/OGRE/ExampleApplication.h:240: undefined reference to `Ogre::TextureManager::getSingleton()'
+./main.o: In function `ExampleApplication::configure()':
+/usr/local/include/OGRE/ExampleApplication.h:331: undefined reference to `Ogre::Root::showConfigDialog()'
+/usr/local/include/OGRE/ExampleApplication.h:335: undefined reference to `Ogre::StringUtil::BLANK'
+/usr/local/include/OGRE/ExampleApplication.h:335: undefined reference to `Ogre::Root::initialise(bool, std::string const&, std::string const&)'
+./main.o: In function `ExampleApplication::chooseSceneManager()':
+/usr/local/include/OGRE/ExampleApplication.h:347: undefined reference to `Ogre::Root::createSceneManager(unsigned short, std::string const&)'
+./main.o: In function `ExampleApplication::createCamera()':
+/usr/local/include/OGRE/ExampleApplication.h:358: undefined reference to `Ogre::Camera::setPosition(Ogre::Vector3 const&)'
+/usr/local/include/OGRE/ExampleApplication.h:360: undefined reference to `Ogre::Camera::lookAt(Ogre::Vector3 const&)'
+./main.o: In function `ExampleApplication::createFrameListener()':
+/usr/local/include/OGRE/ExampleApplication.h:372: undefined reference to `Ogre::Root::addFrameListener(Ogre::FrameListener*)'
+./main.o: In function `ExampleApplication::createViewports()':
+/usr/local/include/OGRE/ExampleApplication.h:383: undefined reference to `Ogre::Viewport::setBackgroundColour(Ogre::ColourValue const&)'
+/usr/local/include/OGRE/ExampleApplication.h:387: undefined reference to `Ogre::Viewport::getActualWidth() const'
+/usr/local/include/OGRE/ExampleApplication.h:387: undefined reference to `Ogre::Viewport::getActualHeight() const'
+./main.o: In function `ExampleApplication::setupResources()':
+/usr/local/include/OGRE/ExampleApplication.h:394: undefined reference to `Ogre::ConfigFile::ConfigFile()'
+/usr/local/include/OGRE/ExampleApplication.h:398: undefined reference to `Ogre::ConfigFile::load(std::string const&, std::string const&, bool)'
+/usr/local/include/OGRE/ExampleApplication.h:402: undefined reference to `Ogre::ConfigFile::getSectionIterator()'
+/usr/local/include/OGRE/ExampleApplication.h:421: undefined reference to `Ogre::ResourceGroupManager::getSingleton()'
+/usr/local/include/OGRE/ExampleApplication.h:422: undefined reference to `Ogre::ResourceGroupManager::addResourceLocation(std::string const&, std::string const&, std::string const&, bool, bool)'
+/usr/local/include/OGRE/ExampleApplication.h:425: undefined reference to `Ogre::ConfigFile::~ConfigFile()'
+/usr/local/include/OGRE/ExampleApplication.h:425: undefined reference to `Ogre::ConfigFile::~ConfigFile()'
+./main.o: In function `ExampleApplication::loadResources()':
+/usr/local/include/OGRE/ExampleApplication.h:439: undefined reference to `Ogre::ResourceGroupManager::getSingleton()'
+/usr/local/include/OGRE/ExampleApplication.h:439: undefined reference to `Ogre::ResourceGroupManager::initialiseAllResourceGroups()'
+collect2: error: ld returned 1 exit status
+make: *** [testogre] Error 1
